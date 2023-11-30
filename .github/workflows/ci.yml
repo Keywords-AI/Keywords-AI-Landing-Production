@@ -32,7 +32,11 @@ jobs:
         with:
             submodules: recursive
       - name: Change directory
-        run: cd Keywords-AI-API-Landing
+        run: |
+         cd Keywords-AI-API-Landing
+         echo "print dirs"
+         ls
+        
         
       - name: Set up Node
         uses: actions/setup-node@v3
