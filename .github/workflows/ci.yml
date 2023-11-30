@@ -45,8 +45,10 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: ./Keywords-AI-API-Landing/yarn.lock
       - name: Install dependencies
+        working-directory: Keywords-AI-API-Landing
         run: yarn
       - name: Build
+        working-directory: Keywords-AI-API-Landing
         run: yarn run build
         env:
           VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
@@ -56,7 +58,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload dist repository
-          path: './dist'
+          path: './working-directory: Keywords-AI-API-Landing/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
