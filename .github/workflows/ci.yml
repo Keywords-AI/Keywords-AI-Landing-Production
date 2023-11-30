@@ -52,6 +52,7 @@ jobs:
         run: yarn run build
         env:
           VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
+          VITE_KEYWORDS_DOMAIN: ${{secrets.VITE_KEYWORDS_DOMAIN}}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
